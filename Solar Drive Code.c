@@ -31,7 +31,7 @@
 /*  function is only called once after the cortex has been powered on and    */
 /*  not every time that the robot is disabled.                               */
 /*---------------------------------------------------------------------------*/
-
+//fdsjbahkgfasdjhkyrfkjsdgf
 void pre_auton()
 {
   // Set bStopTasksBetweenModes to false if you want to keep user created tasks

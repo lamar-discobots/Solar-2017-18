@@ -91,12 +91,21 @@ task autonomous()
 	motor [claw] = 0;
 	// open claw
 
- /*
+
  motor [left1] = -127;
  motor [left2] = -127;
  wait (2.0);
 
- */
+ motor [left1] = -127;
+ motor[left2] = -127;
+ motor [right1] = -127;
+ motor [right2] = -127;
+ wait (2.0);
+
+ motor [left1] = 0;
+ motor[left2] = 0;
+ motor [right1] = 0;
+ motor [right2] = 0;
 }
 
   // ..........................................................................

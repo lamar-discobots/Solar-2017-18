@@ -12,19 +12,23 @@
 
 #define M_PI acos(-1.0)
 
-//DONT YOU F***ING CHANGE IT TO CM
-float wheelRadiusIN = 2;
+//DONT YOU F***ING CHANGE IT TO IN
+float wheelRadiusIN = 4;
 
 //define functions
 int getStraightGoal(float in);
 int getRotationGoal(float deg);
 
 int getStraightGoal(float in) {
-		return 627.7*(in/(wheelRadiusIN*M_PI));
+//627.2 for torque
+//329 for speed
+		return 329*(in/(wheelRadiusIN*M_PI));
 }
 
 int getRotationGoal(float deg) {
-		return 627.7*(deg/102.9);
+//627.2 for torque
+//329 for speed
+return 329*(deg/102.9);
 }
 
 task main()
@@ -39,13 +43,14 @@ motor(claw) = 10;
 //lift up and robot starts moving
 motor[liftL] = motor[liftR] = 126;
 motor(right1) = motor(right2) = motor(left1) = motor(left2) = 127;
-wait1Msec(500);
+wait1Msec(1500);
 
 // tension lift, robot still moving
 motor[liftL] = motor[liftR] = 20;
 
 //forward 44.8 inches				inches*627.2/12.5
-while(abs(nMotorEncoder[left2]) < getStraightGoal(60))
+while(abs(nMotorEncoder[left2]) < getStraightGoal(72
+	))
 {
 	motor(right1) = motor(right2) = motor(left1) = motor(left2) = 127;
 }
